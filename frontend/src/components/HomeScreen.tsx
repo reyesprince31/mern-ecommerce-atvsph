@@ -1,5 +1,5 @@
-import products from "../../product.ts";
-import Product from "../Product.tsx";
+import products from "../products";
+import Product from "./Product";
 
 function HomeScreen() {
   return (

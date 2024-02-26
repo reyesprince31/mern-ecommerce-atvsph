@@ -1,8 +1,21 @@
-import Rating from "./shared/Rating";
+import Rating from "./Rating";
 
-function Product({ product }) {
+interface Product {
+  _id: string;
+  name: string;
+  image: string;
+  description: string;
+  brand: string;
+  category: string;
+  price: number;
+  countInStock: number;
+  rating: number;
+  numReviews: number;
+}
+
+function Product({ product }: { product: Product }) {
   return (
-    <div key={product._id} className="card w-96 bg-base-100 shadow-xl">
+    <div key={product._id} className="card w-80 bg-base-100 shadow-xl">
       <figure>
         <a href="#">
           <img src={product.image} alt="Shoes" />

@@ -1,12 +1,43 @@
 function Header() {
   return (
-    <div className="navbar bg-base-200">
-      <div className="container">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">ATVS WARSHIP</a>
+    <div className="bg-neutral text-neutral-content w-full z-[999] fixed">
+      <div className="navbar container">
+        <div className="navbar-start">
+          <a className="btn btn-ghost text-xl">VapeShop</a>
         </div>
-        <div className="flex-none">
-          <div className="dropdown dropdown-end">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a>Product</a>
+            </li>
+            <li>
+              <details>
+                <summary>Category</summary>
+                <ul className="p-2 text-neutral z-10">
+                  <li>
+                    <a>Submenu 1</a>
+                  </li>
+                  <li>
+                    <a>Submenu 2</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <a>Store</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="navbar-end">
+          <div className="form-control">
+            <input
+              type="text"
+              placeholder="Search"
+              className="input input-bordered w-24 md:w-auto"
+            />
+          </div>
+          <div className="dropdown dropdown-end ">
             <div
               tabIndex={0}
               role="button"
@@ -30,7 +61,7 @@ function Header() {
             </div>
             <div
               tabIndex={0}
-              className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+              className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow text-neutral">
               <div className="card-body">
                 <span className="font-bold text-lg">8 Items</span>
                 <span className="text-info">Subtotal: $999</span>
@@ -56,7 +87,7 @@ function Header() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-neutral">
               <li>
                 <a className="justify-between">
                   Profile
