@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  // daisyUI config (optional - here are the default values)
+  daisyui: {
+    themes: ["light", "dark", "luxury"],
+  },
 };
