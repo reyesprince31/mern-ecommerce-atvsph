@@ -1,4 +1,6 @@
-import Rating from "./Rating";
+import Rate from "./Rating";
+
+import { Card } from "flowbite-react";
 
 interface Product {
   _id: string;
@@ -15,19 +17,24 @@ interface Product {
 
 function Product({ product }: { product: Product }) {
   return (
-    <div key={product._id} className="card w-80 bg-base-100 shadow-xl">
-      <figure>
-        <a href="#">
-          <img src={product.image} alt="Shoes" />
-        </a>
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title line-clamp-1">{product.name}</h2>
-        <p className="line-clamp-2">{product.description}</p>
-        <Rating />
-        <span className="font-semibold text-lg">P {product.price}</span>
+    <Card
+      className="max-w-sm"
+      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+      imgSrc={product.image}>
+      <a href="#">
+        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          {product.name}
+        </h5>
+      </a>
+      <div className="mb-5 mt-2.5 flex items-center">
+        <Rate />
       </div>
-    </div>
+      <div className="flex items-center justify-between">
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">
+          $599
+        </span>
+      </div>
+    </Card>
   );
 }
 
