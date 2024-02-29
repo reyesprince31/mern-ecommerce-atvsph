@@ -16,7 +16,7 @@ function Rate({ value = 3 }) {
   return (
     <Rating>
       {[1, 2, 3, 4, 5].map((star) => (
-        <Rating.Star filled={star <= value} />
+        <Rating.Star key={star} filled={star < value} />
       ))}
 
       <span className="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400" />
@@ -26,21 +26,6 @@ function Rate({ value = 3 }) {
         73 reviews
       </a>
     </Rating>
-
-    // <div className="rating">
-    //   {[1, 2, 3, 4, 5].map((star) => {
-    //     return (
-    //       <input
-    //         key={star}
-    //         type="radio"
-    //         checked={star === rating}
-    //         onChange={() => handleRatingChange(star)}
-    //         className="mask mask-star"
-    //         disabled={readOnly}
-    //       />
-    //     );
-    //   })}
-    // </div>
   );
 }
 

@@ -1,9 +1,11 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import { TbShoppingCart } from "react-icons/tb";
 
 export default function Header() {
   return (
-    <Navbar fluid rounded>
-      <Navbar.Brand href="https://flowbite-react.com">
+    <Navbar fluid rounded className="bg-gray-200 shadow-xl fixed w-full">
+      <Navbar.Toggle />
+      <Navbar.Brand href="/">
         {/* <img
           src="/favicon.svg"
           className="mr-3 h-6 sm:h-9"
@@ -13,7 +15,25 @@ export default function Header() {
           Flowbite React
         </span>
       </Navbar.Brand>
-      <div className="flex md:order-2">
+      <div className="flex md:order-2 gap-4">
+        <Dropdown
+          arrowIcon={false}
+          inline
+          label={
+            <div className="indicator">
+              <TbShoppingCart className="w-6 h-6" />
+              <span className="badge badge-sm indicator-item">8</span>{" "}
+            </div>
+          }>
+          <Dropdown.Header>
+            <span className="block text-sm">8 Items</span>
+          </Dropdown.Header>
+          <Dropdown.Header>Subtotal: $999</Dropdown.Header>
+          <Dropdown.Item icon={TbShoppingCart} href="/product/cart">
+            View Cart
+          </Dropdown.Item>
+        </Dropdown>
+
         <Dropdown
           arrowIcon={false}
           inline
@@ -36,16 +56,15 @@ export default function Header() {
           <Dropdown.Divider />
           <Dropdown.Item>Sign out</Dropdown.Item>
         </Dropdown>
-        <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
+        <Navbar.Link href="/" active>
           Home
         </Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
+        <Navbar.Link href="/about">About</Navbar.Link>
+        <Navbar.Link href="/services">Services</Navbar.Link>
+        <Navbar.Link href="/pricing">Pricing</Navbar.Link>
+        <Navbar.Link href="/contact">Contact</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
