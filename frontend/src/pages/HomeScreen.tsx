@@ -1,5 +1,5 @@
 import products from "../products";
-import Product from "./Product";
+import Product from "../components/Product";
 
 function HomeScreen() {
   return (

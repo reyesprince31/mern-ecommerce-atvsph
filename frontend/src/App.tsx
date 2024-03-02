@@ -4,9 +4,10 @@ import { Outlet } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen justify-between">
       <Header />
-      <main className="container mt-24 p-4 ">
+
+      <main className="mt-24 max-w-screen-xl mx-auto w-full">
         <Outlet />
       </main>
 

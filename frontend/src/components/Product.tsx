@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Rate from "./Rating";
+import Rate from "./shared/Rating";
 
 import { Card } from "flowbite-react";
 
@@ -18,11 +18,7 @@ interface Product {
 
 function Product({ product }: { product: Product }) {
   return (
-    <Card
-      className="max-w-full"
-      imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-      imgSrc={product.image}
-      href={`product/${product._id}`}>
+    <Card className="max-w-full" imgAlt={product.image} imgSrc={product.image}>
       <div className="">
         <Link to={`product/${product._id}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white truncate">
@@ -33,7 +29,11 @@ function Product({ product }: { product: Product }) {
           </h3>
         </Link>
         <div className="mt-4 flex items-center">
-          <Rate />
+          <Rate
+            product_id={product._id}
+            value={product.rating}
+            text={product.numReviews}
+          />
         </div>
         <div className="flex items-center justify-between mt-2.5">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
